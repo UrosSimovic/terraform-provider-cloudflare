@@ -33,7 +33,7 @@ func dataSourceCloudflareUserTokenPermissionGroupsRead(d *schema.ResourceData, m
 
 	permissionDetails := make(map[string]interface{}, 0)
 	for _, v := range permissions {
-		permissionDetails[v.Label] = v.ID
+		permissionDetails[v.Name] = v.ID
 	}
 
 	err = d.Set("permissions", permissionDetails)
